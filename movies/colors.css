@@ -1,0 +1,123 @@
+:root {
+  /* --- Primary Colors (Dominant Backgrounds & Text) --- */
+  --color-background-primary: #f8f4f0; /* A very soft, warm off-white, like parchment or light sand */
+  --color-background-secondary: #e8e2dd; /* A slightly deeper, muted warm grey/beige for subtle contrast sections */
+  --color-text-primary: #333333; /* Soft charcoal for main body text, readable without being stark */
+  --color-text-secondary: #5c5c5c; /* A slightly lighter grey for less important text (e.g., footer, subtle notes) */
+
+  /* --- Accent Colors (Buttons, Links, Borders, Highlights) --- */
+  --color-accent-soft: #a8b8a6; /* A muted, earthy sage green – very calming and natural */
+  --color-accent-medium: #7f937e; /* A slightly deeper version of the sage, for hover states or stronger accents */
+  --color-accent-dark: #556b54; /* A deeper, richer green for active states or bolder elements */
+
+  /* --- Subtle Touches (Borders, Dividers, Shadows) --- */
+  --color-border-light: #d5d0cc; /* A very light, muted warm grey for subtle lines */
+  --color-shadow-light: rgba(0, 0, 0, 0.08); /* Soft, barely-there shadow */
+  --color-shadow-medium: rgba(
+    0,
+    0,
+    0,
+    0.15
+  ); /* Slightly more visible shadow for pop-out elements */
+}
+
+/* Applying the theme to your existing elements */
+body {
+  background-color: var(--color-background-primary);
+  color: var(--color-text-primary);
+}
+
+header {
+  border-bottom-color: var(
+    --color-border-light
+  ); /* Using the new border color */
+}
+
+/* Adjusting header text color if needed, though primary is usually fine */
+header h1 {
+  color: var(--color-text-primary);
+}
+
+main {
+  /* Your existing padding, grid, etc. */
+}
+
+article {
+  background: var(
+    --color-background-secondary
+  ); /* Articles use the slightly darker background */
+  border: 1px solid var(--color-border-light); /* A subtle border for articles */
+  box-shadow: 0 4px 8px var(--color-shadow-light); /* Soft shadow for a modern, lifted feel */
+}
+
+/* Adjusting H2 inside article */
+article h2 {
+  color: var(--color-text-primary); /* Keeping consistent for readability */
+}
+
+/* For your "personal-note" section */
+.personal-note {
+  background-color: var(
+    --color-background-secondary
+  ); /* Or even background-primary if you want it to blend */
+  padding: 1.5rem; /* Give it some breathing room */
+  border-radius: 8px; /* Slightly more rounded corners for a modern feel */
+  margin-bottom: 2rem; /* Space below the note */
+  box-shadow: 0 2px 5px var(--color-shadow-light);
+}
+.personal-note h3 {
+  color: var(--color-accent-dark); /* Accent color for the note's heading */
+  margin-bottom: 1rem;
+}
+.personal-note b {
+  /* To make your bold text stand out with an accent */
+  color: var(--color-accent-medium);
+}
+
+/* Links & Interactive Elements */
+a {
+  color: var(--color-accent-medium); /* Default link color */
+  text-decoration: none; /* Remove default underline */
+}
+
+a:hover {
+  color: var(--color-accent-dark); /* Darker on hover */
+  text-decoration: underline; /* Add underline on hover for clarity */
+}
+
+/* Footer specific styles */
+footer {
+  border-top-color: var(--color-border-light);
+  color: var(--color-text-secondary); /* Lighter text for footer */
+}
+footer a {
+  color: var(--color-accent-dark); /* Footer links might be a bolder accent */
+}
+footer a:hover {
+  color: var(--color-accent-medium); /* Adjust hover for footer links */
+}
+
+/* Movie list section (if you added one) */
+.movie-list-section {
+  padding: 1rem; /* Some padding around the list */
+}
+.movie-list-section h3 {
+  color: var(--color-accent-dark); /* Heading for the list */
+  margin-bottom: 1.5rem;
+}
+.movie-list-section ul {
+  list-style: none; /* Remove default bullet points */
+  padding: 0;
+}
+.movie-list-section li {
+  padding: 0.5rem 0;
+  border-bottom: 1px dashed var(--color-border-light); /* Subtle divider */
+  line-height: 1.6;
+}
+.movie-list-section li:last-child {
+  border-bottom: none; /* No border on the last item */
+}
+.movie-list-section li strong {
+  /* For the movie titles within the list */
+  color: var(--color-accent-medium);
+}
