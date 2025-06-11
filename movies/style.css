@@ -62,6 +62,39 @@ article h2 {
   padding: 0.4rem;
 }
 
+.movie-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
+.movie-category {
+  padding: 1rem;
+  border-radius: 8px;
+}
+
+.movie-category h4 {
+  margin-top: 0;
+  font-size: 1.2rem;
+  border-bottom: 1px solid #333;
+  padding-bottom: 0.5rem;
+}
+
+.movie-category ul {
+  padding-left: 1rem;
+  list-style-type: disc;
+}
+
+.movie-category li {
+  margin-bottom: 1rem;
+}
+
+.movie-category b {
+  display: block;
+  margin-bottom: 0.25rem;
+}
+
 @media (max-width: 992px) {
   main {
     grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));

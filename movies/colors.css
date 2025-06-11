@@ -101,7 +101,7 @@ footer a:hover {
 .movie-list-section {
   padding: 1rem; /* Some padding around the list */
 }
-.movie-list-section h3 {
+.movie-list-section h2 {
   color: var(--color-accent-dark); /* Heading for the list */
   margin-bottom: 1.5rem;
 }
