@@ -3,135 +3,46 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>404: Path Not Found | [Your Name/Site Title]</title>
-    <link rel="stylesheet" href="/style.css"> 
+    <title>404 Page Not Found</title>
     <style>
-        /* Define a subtle, intelligent color palette for this page if not using external vars */
-        /* If you have a global colors.css, these can be replaced by var(--color-name) */
-        :root {
-            --intelligent-bg: #F8F8F8; /* Soft off-white */
-            --intelligent-text-main: #2A2A2A; /* Deep charcoal */
-            --intelligent-text-subtle: #6A6A6A; /* Muted grey */
-            --intelligent-accent: #5F7D8D; /* A sophisticated blue-grey */
-            --intelligent-border: #E0E0E0; /* Light grey for subtle lines */
-            --intelligent-shadow: rgba(0, 0, 0, 0.05); /* Very light shadow */
-        }
-
+        /* Minimal CSS for centering and basic styling */
         body {
-            font-family: 'Georgia', serif; /* A classic, readable serif font */
-            background-color: var(--intelligent-bg);
-            color: var(--intelligent-text-main);
+            font-family: 'Georgia', 'Palatino Linotype', Palatino, serif; /* Consistent with previous old-school theme */
+            background-color: #FFFFFF; /* Pure white background */
+            color: #000000; /* Pure black text */
+            margin: 0;
+            display: flex; /* Use flexbox for centering */
+            justify-content: center; /* Center horizontally */
+            align-items: center; /* Center vertically */
+            min-height: 100vh; /* Take full viewport height */
+            text-align: center; /* Center text within the message */
+        }
+
+        .message-container {
+            /* Simple flex center div, no border as requested */
             display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            min-height: 100vh;
-            text-align: center;
-            padding: 2rem;
-            box-sizing: border-box;
-            line-height: 1.6;
+            flex-direction: column; /* Stack elements vertically */
+            align-items: center; /* Center items within the container */
+            padding: 20px; /* Some padding around the message */
         }
 
-        .container-404 {
-            background-color: #FFFFFF; /* Pure white for the content box */
-            padding: 3rem;
-            border-radius: 8px;
-            box-shadow: 0 6px 20px var(--intelligent-shadow);
-            max-width: 680px;
-            width: 100%;
-            border: 1px solid var(--intelligent-border); /* Subtle border */
+        h1 {
+            font-size: 2.5em; /* Larger font for the main heading */
+            margin-bottom: 15px; /* Space below the heading */
+            font-weight: bold; /* Make it stand out */
         }
 
-        .container-404 h1 {
-            font-family: 'Helvetica Neue', Arial, sans-serif; /* A clean sans-serif for the number */
-            font-size: clamp(4rem, 12vw, 8rem); /* Large, impactful 404 */
-            color: var(--intelligent-accent);
-            margin-bottom: 0.5rem;
-            letter-spacing: -2px;
-            font-weight: 300; /* Light weight for a modern look */
-        }
-
-        .container-404 h2 {
-            font-size: clamp(1.5rem, 5vw, 2.5rem);
-            color: var(--intelligent-text-main);
-            margin-top: 0;
-            margin-bottom: 1.5rem;
-            font-weight: normal;
-        }
-
-        .container-404 p {
-            font-size: 1.1rem;
-            color: var(--intelligent-text-subtle);
-            margin-bottom: 2rem;
-        }
-
-        .container-404 blockquote {
-            font-style: italic;
-            font-size: 0.95rem;
-            color: var(--intelligent-text-subtle);
-            border-left: 3px solid var(--intelligent-border);
-            padding-left: 1rem;
-            margin: 2rem auto;
-            max-width: 80%;
-        }
-
-        .container-404 a {
-            display: inline-block;
-            background-color: var(--intelligent-accent);
-            color: var(--intelligent-bg); /* Text color on button */
-            padding: 0.9rem 2.2rem;
-            border-radius: 4px;
-            text-decoration: none;
-            transition: background-color 0.3s ease, transform 0.2s ease;
-            font-weight: bold;
-            letter-spacing: 0.5px;
-        }
-
-        .container-404 a:hover {
-            background-color: #4A6E7D; /* A slightly darker shade of the accent */
-            transform: translateY(-2px); /* Subtle lift effect */
-        }
-
-        /* Footer for consistency */
-        footer {
-            margin-top: 3rem;
-            font-size: 0.85rem;
-            color: var(--intelligent-text-subtle);
-            max-width: 600px;
-            width: 100%;
-        }
-        footer a {
-            color: var(--intelligent-accent);
-            text-decoration: none;
-        }
-        footer a:hover {
-            text-decoration: underline;
+        p {
+            font-size: 1.2em; /* Readable font size for the message */
+            line-height: 1.5;
+            max-width: 600px; /* Limit line length for readability */
         }
     </style>
 </head>
 <body>
-    <div class="container-404">
-        <h1>404</h1>
-        <h2>A Digital Anomaly Detected.</h2>
-        <p>
-            It appears the particular datum or pathway you sought is currently beyond reach,
-            or perhaps it never quite materialized in this dimension.
-        </p>
-        <blockquote>
-            "The map is not the territory." <br>— Alfred Korzybski
-        </blockquote>
-        <p>
-            You might find more reliable coordinates back at the origin.
-        </p>
-        <a href="/">Return to Homepage</a>
+    <div class="message-container">
+        <h1>404 Page Not Found</h1>
+        <p>The requested resource could not be found.</p>
     </div>
-
-    <footer>
-        <p>
-            &copy; 2024 [Your Name]. All Rights Reserved.
-            <br>
-            <a href="mailto:your.email@example.com">Contact</a> | <a href="/privacy-policy">Privacy</a>
-        </p>
-    </footer>
 </body>
 </html>
