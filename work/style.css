@@ -1,0 +1,254 @@
+body {
+  font-family: "Georgia", "Palatino Linotype", Palatino, serif; /* Classic serif font */
+  line-height: 1.6;
+  margin: 0;
+  padding: 20px;
+  background-color: #fff; /* White background */
+  color: #000; /* Black text */
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  min-height: 100vh;
+}
+
+.container {
+  max-width: 1980px; /* Max-width as requested */
+  width: 95%; /* Occupy full horizontal space up to max-width */
+  background-color: #fff; /* White background */
+  padding: 30px;
+  box-sizing: border-box; /* Include padding and border in the element's total width and height */
+
+  display: grid; /* Enable Grid Layout */
+  grid-template-columns: 1fr; /* Default single column for mobile */
+  gap: 20px 30px; /* Vertical and horizontal gap */
+}
+
+/* --- Desktop Layout (Newspaper Grid) --- */
+@media (min-width: 768px) {
+  .container {
+    /* Define a three-column layout for main content on larger screens */
+    grid-template-columns: repeat(3, 1fr); /* Three equal columns */
+  }
+
+  /* Sections that span the full width */
+  header,
+            .hiring-engineers-note,
+            .podcast-audio-cta, /* Now spans full width */
+            .professional-overview-section,
+            footer {
+    grid-column: 1 / -1; /* Span all columns */
+  }
+
+  /* Main work experience section spans two columns */
+  .work-experience-section {
+    grid-column: 1 / span 2;
+  }
+
+  /* Skills section takes the third column */
+  .skills-section {
+    grid-column: 3 / 4;
+  }
+
+  /* Personal projects section below work experience, spanning two columns */
+  .personal-projects-section {
+    grid-column: 1 / span 2;
+  }
+
+  /* Miscellaneous section takes the third column, below skills if content fits */
+  .miscellaneous-section {
+    grid-column: 3 / 4;
+  }
+}
+
+h1,
+h2,
+h3 {
+  color: #000; /* Black for strong contrast */
+  margin-top: 25px;
+  margin-bottom: 15px;
+  font-weight: normal; /* Classic newspaper feel */
+}
+
+h1 {
+  font-size: 3em;
+  text-align: center;
+  margin-bottom: 10px;
+  font-weight: bold; /* Keep main title prominent */
+}
+
+h2 {
+  font-size: 2em;
+  border-bottom: 1px solid #000; /* Solid black border for headings */
+  padding-bottom: 8px;
+  margin-top: 40px;
+}
+
+h3 {
+  font-size: 1.4em;
+  margin-top: 25px;
+  margin-bottom: 10px;
+}
+
+.header-meta {
+  text-align: center;
+  color: #333; /* Dark grey for meta information */
+  font-size: 1.1em;
+  margin-bottom: 30px;
+}
+
+.header-meta a {
+  color: #000; /* Black links for monochromatic theme */
+  text-decoration: underline; /* Always underlined */
+  font-weight: bold; /* Bold for emphasis */
+  margin: 0 10px;
+}
+
+.header-meta a:hover {
+  color: #555; /* Slightly lighter on hover */
+}
+
+.section-content {
+  margin-bottom: 20px;
+  padding-bottom: 10px;
+  border-bottom: 1px dotted #555; /* Dark grey dotted separator */
+}
+
+.section-content:last-of-type {
+  border-bottom: none; /* No border for the very last section */
+}
+
+ul {
+  list-style: "-" outside; /* Em dash for bullets, classic newspaper style */
+  padding-left: 25px; /* Indent lists */
+  margin: 0;
+}
+
+ul li {
+  margin-bottom: 8px; /* Tighter line spacing */
+  padding: 0;
+  text-indent: -1em; /* Hanging indent for newspaper look */
+  padding-left: 1em; /* Compensate for text-indent */
+}
+
+ul li strong {
+  display: inline; /* Keep strong text inline */
+  margin-bottom: 0;
+  font-weight: bold; /* Explicitly bold for strong tags */
+}
+
+.project-list ul {
+  list-style: decimal outside; /* Numbered list for projects, with hanging indent */
+}
+
+.hiring-engineers-note {
+  background-color: #fff; /* White background */
+  padding: 15px 20px;
+  margin-bottom: 30px;
+  font-style: italic;
+  color: #000; /* Black text */
+  text-align: center;
+}
+
+/* Podcast Audio Button Section Styling */
+.podcast-audio-cta {
+  grid-column: 1 / -1; /* Ensure it spans full width in grid */
+  text-align: center;
+  margin: 30px 0; /* Add some vertical spacing */
+  border-top: 1px dashed #555; /* Subtle separator line */
+  padding-top: 20px; /* Padding above content */
+}
+
+.podcast-catchy-line {
+  font-size: 1.2em;
+  margin-bottom: 15px;
+  color: #333;
+}
+
+.podcast-catchy-line .highlight {
+  font-weight: bold;
+  font-style: italic;
+  color: #000; /* Emphasize with black */
+}
+
+.podcast-button {
+  display: inline-flex; /* Allows icon and text to be aligned */
+  align-items: center;
+  justify-content: center;
+  width: 140px; /* Fixed width for button */
+  height: 50px; /* Fixed height for button */
+  border-radius: 25px; /* Creates a pill/oval shape */
+  background-color: #000; /* Black background */
+  color: #fff; /* White text */
+  border: 1px solid #000; /* Black border */
+  font-family: "Georgia", serif;
+  font-size: 1.1em;
+  cursor: pointer;
+  transition: background-color 0.2s ease, box-shadow 0.2s ease;
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3); /* Subtle shadow for depth and clickability */
+}
+
+.podcast-button:hover {
+  background-color: #333; /* Slightly lighter on hover */
+  box-shadow: 3px 3px 7px rgba(0, 0, 0, 0.4); /* More pronounced shadow on hover */
+}
+
+.podcast-button:active {
+  background-color: #555; /* Darker on click */
+  box-shadow: inset 1px 1px 3px rgba(0, 0, 0, 0.5); /* Inset shadow for pressed effect */
+}
+
+/* Hide the native audio controls */
+.podcast-audio-cta audio {
+  display: none;
+}
+
+.podcast-section p {
+  /* Removed, as podcast-section is no longer used for full content */
+  margin-bottom: 10px;
+  color: #333; /* Dark grey for podcast description */
+}
+
+.footer {
+  text-align: center;
+  margin-top: 50px;
+  padding-top: 20px;
+  border-top: 1px solid #000; /* Black border for footer separator */
+  color: #333; /* Dark grey for footer text */
+  font-size: 0.9em;
+}
+
+/* Responsive adjustments for smaller screens */
+@media (max-width: 767px) {
+  /* Changed breakpoint to ensure mobile is always single column */
+  body {
+    padding: 10px;
+  }
+
+  .container {
+    padding: 15px;
+    width: 98%; /* More width on very small screens */
+    grid-template-columns: 1fr; /* Force single column on smaller screens */
+  }
+
+  h1 {
+    font-size: 2.2em;
+  }
+
+  h2 {
+    font-size: 1.6em;
+  }
+
+  h3 {
+    font-size: 1.2em;
+  }
+
+  .header-meta {
+    font-size: 0.9em;
+  }
+
+  .podcast-button {
+    width: 120px; /* Adjust button size for smaller screens */
+    height: 45px;
+    font-size: 1em;
+  }
+}
